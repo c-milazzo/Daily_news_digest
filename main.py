@@ -1,10 +1,27 @@
 import requests
 from send_email import send_email
+from datetime import datetime
 
-topic = "techcrunch"
-api_key = "18b05ed1f9f1448e92946cc428595f88/"
-url = ("https://newsapi.org/v2/top-headlines?sources"
-       f"={topic}&apiKey=18b05ed1f9f1448e92946cc428595f88&language=en")
+now = datetime.now()
+
+current_month = now.month
+
+modified = now.replace(month=current_month-1)
+
+date = modified.strftime("%Y-%m-%d")
+
+topic = "techCrunch"
+language = "en"
+
+api_key = "18b05ed1f9f1448e92946cc428595f88"
+
+#url = ("https://newsapi.org/v2/top-headlines?sources"
+       #f"={topic}&apiKey=18b05ed1f9f1448e92946cc428595f88")
+url = "https://newsapi.org/v2/top-headlines?sources=techcrunch" \
+      f"&from={date}" \
+      "sortBy=publishedAt" \
+      f"&apiKey={api_key}" \
+       f"&language={language}"
 
 # Make request
 request = requests.get(url)
