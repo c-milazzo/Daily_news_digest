@@ -1,2 +1,2 @@
 # What is this project?
-This app access news about TechCrunch and sends them to my email.
+A script that gets up to date data from a TechCrunch API and is automated to send contents to an email.
