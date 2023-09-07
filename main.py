@@ -1,6 +1,7 @@
 import requests
 from send_email import send_email
 from datetime import datetime
+import os
 
 now = datetime.now()
 
@@ -13,10 +14,8 @@ date = modified.strftime("%Y-%m-%d")
 topic = "techCrunch"
 language = "en"
 
-api_key = "18b05ed1f9f1448e92946cc428595f88"
+api_key = os.getenv("news_api")
 
-#url = ("https://newsapi.org/v2/top-headlines?sources"
-       #f"={topic}&apiKey=18b05ed1f9f1448e92946cc428595f88")
 url = "https://newsapi.org/v2/top-headlines?sources=techcrunch" \
       f"&from={date}" \
       "sortBy=publishedAt" \
