@@ -1,2 +1,4 @@
 # What is this project?
-This app access news about TechCrunch and sends them to my email.
+This project fetches the latest news articles from the TechCrunch source 
+using the News API, compiles them into an email body, and 
+sends an email with the news articles to a myself using a custom email sending function.
